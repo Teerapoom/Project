@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageOne</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="cesta-feira.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.min.js"></script>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Kanit:wght@300&family=Noto+Serif+Thai:wght@300&display=swap');
+
+    * {
+        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Kanit', sans-serif;
+        font-family: 'Noto Serif Thai', serif;
+    }
+
+    body {
+        background-color: #FFF4E0
+    }
+
+    .btncolor {
+        background-color: #A66E00;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .btncolor:link {
+        background-color: #A66E00;
+        /* ยังไม่ถูกคลิก */
+    }
+
+    /* visited link  ถูกคลิกไปเเล้ว*/
+    .btncolor:visited {
+        color: green;
+    }
+
+    /* mouse over link ชี้เมาส์จะเปลี่ยนสี */
+    .btncolor:hover {
+        background-color: #FFCF73;
+    }
+
+    .dropdown {
+        width: 50%;
+        color: #000;
+    }
+
+    /* .search{
+        width: 115%;
+    } */
+    .container_box1 {
+        margin: 20px 50px;
+    }
+
+    .buy {
+        background-color: #FFBE40;
+    }
+
+    .footercoler {
+        background-color: #FFA900;
+    }
+
+    .help {
+        margin-top: 25px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar" style="background-color: #FFF4E0;">
+            <div class="container-fluid">
+                <img src="./img/Logo.png" alt="logo" width="150" height="80">
+                <div class="btn-group " role="group" aria-label="Basic example"
+                    style="margin-top: 63px; margin-right:20px;">
+                    <a href="#" type="button" class="btn btncolor" style="color: #FFF;">เลือกซื้อสินค้า</a>
+                    <a href="pageTwo.html"  type="button" class="btn btncolor" style="color: #FFF;">สั่งซื้อสินค้า</a>
+                    <a href="เพิ่มเมนูพิเศษ.html" type="button" class="btn  btncolor" style="color: #FFF;">เพิ่มเติมเมนูพิเศษ</a>
+                    <a href="คัพเค้ก.html" type="button" class="btn  btncolor" style="color: #FFF;">คลังสินค้า</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <nav class="navbar" style="background-color:#FFA900;">
+        <div class="container-fluid">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle dropdown" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #E8C47E;">
+                    หมวดหมู่
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li style="text-align: center;"><a class="dropdown-item" href="#">คัพเค้ก</a></li>
+                    <li style="text-align: center;"><a class="dropdown-item" href="#">ครัวซอง</a></li>
+                    <li style="text-align: center;"><a class="dropdown-item" href="#">คุกกี้</a></li>
+                    <li style="text-align: center;"><a class="dropdown-item" href="#">ชีทเค้ก</a></li>
+                </ul>
+            </div>
+            <form class="d-flex">
+                <input class="form-control me-2 " type="search" placeholder="ค้นหาสินหา" aria-label="Search">
+                <div class="p-2">
+                    <a href="" data-cesta-feira-items-count>
+                        <img src="./img/basket.png" width="30" height="30" alt="basket" style="margin-top: 10px;" />
+                        <span class="badge rounded-pill badge-notification bg-danger"></span>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- สินค้า -->
+    <div class="container">
+        <div class="container container_box1">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Card1.jpg" class="card-img-top" alt="cake" width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>บลูเบอร์รีชีสพาย</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 35 บาท</p>
+                            <a href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Card2.jpg" class="card-img-top" alt="..." width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>นูเทลลาชีสเค้ก</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 25 บาท</p>
+                            <a  href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Card3.jpg" class="card-img-top" alt="..." width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>ช็อกโกแลตชีสเค้ก</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 25 บาท</p>
+                            <a href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- สินค้า -->
+    <!-- สินค้าเเถว2 -->
+    <div class="container">
+        <div class="container container_box1">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Card4.jpg" class="card-img-top" alt="cake" width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>แจแปนนีสชีสเค้ก</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 35 บาท</p>
+                            <a href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Card5.jpg" class="card-img-top" alt="..." width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>คัพเค้กนมสด</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 25 บาท</p>
+                            <a  href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./img/Caed6.jpg" class="card-img-top" alt="..." width="60" height="250">
+                        <div class="card-body">
+                            <h3 class="card-title text-center"><strong>เค้กชาเขียวลาวา</strong></h3>
+                            <p class="card-text text-center" style="padding:15px;">ชิ้นละ 25 บาท</p>
+                            <a  href="pageTwo.html" type="submit" class="btn  d-grid gap-2 col-6 mx-auto buy">สั่งซื้อ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- สินค้าเเถว2  -->
+    <!-- <Footer> -->
+    <footer class="footercoler">
+        <div class="container">
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+                <div class="col-md-6 help">
+                    <p style="color:#0C34C2;"><img src="./img/help.png" width="25" height="28"
+                            style="margin-right:20px;">ช่วยเหลือ</p>
+                </div>
+                <div class="col-6 col-md-2 help">
+                    <p style="color:#0C34C2;"><img src="./img/call.png" width="25" height="28"
+                            style="margin-right:20px;">ติดต่อเรา</p>
+                </div>
+                <div class="col-6 col-md-2 help">
+                    <p style="color:#0C34C2;"><img src="./img/position.png" width="25" height="28"
+                            style="margin-right:20px;">ตำเเหน่งร้าน</p>
+                </div>
+                <div class="col-6 col-md-2 help">
+                    <p style="color:#0C34C2;"><img src="./img/earth.png" width="25" height="28"
+                            style="margin-right:20px;">ติดตามเรา</p>
+                </div>
+            </div>
+    </footer>
+    <!-- <Footer> -->
+</body>
+<script>
+    
+</script>
+
+</html>
